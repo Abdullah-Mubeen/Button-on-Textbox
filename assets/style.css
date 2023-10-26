@@ -1,0 +1,86 @@
+/* Style for textarea slider & button */
+#containerSliderTextBox {
+    margin-top: 1rem !important;
+    margin-left: 12px;
+    width: 98%;
+    display: flex;
+    position: relative;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 22px 0px #00000033;
+}
+
+.resizable-box {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 80%;
+    font-size: 20px;
+    padding: 10px 0;
+    line-height: 40px;
+    background-size: 100% 40px;
+    border: 0;
+    outline: 0;
+    resize: none;
+}
+
+#slider {
+    cursor: col-resize;
+    border-right: 4px solid rgba(255, 255, 255, 0);
+    width: 5px;
+    background-color: #ddd;
+}
+
+#containerSliderTextBox {
+    position: relative;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#leftBox {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 80%;
+    font-size: 20px;
+    padding: 10px 0;
+    line-height: 40px;
+    background-size: 100% 40px;
+    background-image: linear-gradient(#eee 1px,transparent 1px);
+    border: 0;
+    outline: 0;
+}
+
+#rightBox {    
+    background-image: linear-gradient(#eee 1px,transparent 1px);
+}
+
+#sampleTextButton {
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border: 2px solid black;
+    opacity: inherit;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    #sampleTextButton {
+        margin-top: 75px;
+        width: 80px;
+        font-size: 12px;
+        padding: 10px;
+    }
+}
