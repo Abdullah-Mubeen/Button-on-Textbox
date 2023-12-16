@@ -1,91 +1,204 @@
-/* Style for textarea slider & button */
-#containerSliderTextBox {
-    margin-top: 1rem !important;
-    margin-left: 12px;
-    width: 97%;
-    display: flex;
-    position: relative;
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 22px 0px #00000033;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+body {
+  background-color: #F1F1F1;
+  font-family: 'Roboto', sans-serif;
 }
 
+/* Style for tabs,textarea, slider, button */
+#editorContainer {
+  display: flex;
+  flex-direction: column; 
+  margin-top: 20px;
+  margin-bottom: -30px;
+  justify-content: space-evenly;
+}
+
+#tabs {
+  display: flex;
+  flex-wrap: wrap; 
+  padding: 10px;
+  margin-left: 2px;
+  margin-bottom: -25px;
+}
+
+.tab {
+  display: flex;
+  padding: 13px 25px;
+  cursor: pointer;
+  color: #000;
+  font-weight: 400;
+  line-height: 20px;
+  font-size: 15px;
+  justify-content: center;
+  border-radius: 8px 8px 0px 0px;
+  margin-right: 10px; /* Add margin between tabs */
+}
+
+.active_tab {
+  background: #fff;
+  /* color: #00f;  */
+}
+
+.tab:hover:not(.active_tab) {
+  background-color: #e0e0e0;
+  box-shadow: 4px 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown_tab {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 1;
+  columns: 3; /* Specify the number of columns */
+  margin-top: 1.8rem;
+  margin-left: 280px;
+  gap: 10px;
+}
+
+.dropdown-column {
+  break-inside: avoid; /* Prevent column breaks inside items */
+  padding: 20px;
+}
+
+.dropdown-item {
+  padding: 8px;
+  cursor: pointer;
+  color: #000;
+}
+
+.dropdown-item:hover,
+.dropdown-item.selected {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #ccc;
+}
+
+.dropdown-tab-open .dropdown-content {
+  display: block;
+}
+
+.bx-chevron-up {
+  transform: rotate(180deg);
+}
+
+.bx {
+  transition: transform 0.3s ease-in-out; 
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 600px) {
+  #tabs {
+    flex-direction: column; 
+    margin-left: 0; 
+  }
+  
+  .tab {
+    width: 100%; 
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .dropdown-content {
+    min-width: 100%;
+    box-shadow: none;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1000px) {
+  .dropdown-content {
+    min-width: 80%;
+  }
+}
+
+#containerSliderTextBox {
+  display: flex;
+  margin-top: 1rem !important;
+  margin-left: 12px;
+  width: 97%;
+  position: relative;
+  background-color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0px 4px 5px 0px #00000033;
+}
 .resizable-box {
-    position: relative;
-    display: block;
-    margin: auto;
-    width: 80%;
-    font-size: 20px;
-    padding: 10px 0;
-    line-height: 40px;
-    background-size: 100% 40px;
-    border: 0;
-    outline: 0;
-    resize: none;
+  position: relative;
+  display: block;
+  margin: auto;
+  width: 80%;
+  font-size: 20px;
+  padding: 10px 0;
+  line-height: 40px;
+  background-size: 100% 40px;
+  border: 0;
+  outline: 0;
+  resize: none;
 }
 
 #slider {
-    cursor: col-resize;
-    border-right: 4px solid rgba(255, 255, 255, 0);
-    width: 3px;
-    background-color: #ddd;
+  cursor: col-resize;
+  border-right: 4px solid rgba(255, 255, 255, 0);
+  width: 3px;
+  background-color: #ddd;
 }
 
 #slider:hover {
-    border-width: 6px;
-    background-color: #aaaa;
+  border-width: 6px;
+  background-color: #aaaa;
 }
 
-#containerSliderTextBox {
-    position: relative;
-    background-color: white;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
 
 #leftBox {
-    position: relative;
-    display: block;
-    margin: auto;
-    width: 80%;
-    font-size: 20px;
-    padding: 10px 0;
-    line-height: 40px;
-    background-size: 100% 40px;
-    background-image: linear-gradient(#eee 1px,transparent 1px);
-    border: 0;
-    outline: 0;
+  position: relative;
+  display: block;
+  margin: auto;
+  width: 80%;
+  font-size: 20px;
+  padding: 10px 0;
+  line-height: 40px;
+  background-size: 100% 40px;
+  background-image: linear-gradient(#eee 1px, transparent 1px);
+  border: 0;
+  outline: 0;
 }
 
-#rightBox {    
-    background-image: linear-gradient(#eee 1px,transparent 1px);
+#rightBox {
+  background-image: linear-gradient(#eee 1px, transparent 1px);
 }
 
 #sampleTextButton {
-    box-sizing: border-box;
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    border: 2px solid black;
-    opacity: inherit;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border: 2px solid black;
+  opacity: inherit;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
 
 @media (max-width: 600px) {
-    #sampleTextButton {
-        margin-top: 75px;
-        width: 80px;
-        font-size: 12px;
-        padding: 10px;
-    }
+  #sampleTextButton {
+    margin-top: 75px;
+    width: 80px;
+    font-size: 12px;
+    padding: 10px;
+  }
 }
